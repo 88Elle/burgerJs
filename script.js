@@ -117,7 +117,9 @@ let btnPlusOrMinus = document.querySelectorAll('.main__product-btn'),
     receiptWindow = document.querySelector('.receipt__window'),
     receiptOut = document.querySelector('.receipt__window-out'),
     receiptBtn = document.querySelector('.receipt__window-btn');
-
+   
+   
+    
 
     
 
@@ -256,10 +258,56 @@ addCart.addEventListener('keydown', function(event) {
     }
  });
 
+ // Домашнее задание 'Images click'
+
+view = document.querySelector('.view'),
+viewClose = document.querySelector('.view__close'),
+viewImg = document.querySelector('.view img'),
+btnInfo = document.querySelectorAll('.main__product-info');
+
+btnInfo.forEach(function(item){
+    item.addEventListener('dblclick', function() {
+        view.classList.add('active');
+        image(item);
+        
+    })
+});
+
+function image (el){
+    parentId = el.closest('.main__product').getAttribute('id'),
+    mainImg  = el.closest('.main__product').querySelector('.main__product-info img'),
+    mainImg = product[parentId].img;
+    viewImg.setAttribute('src', mainImg)
+}
+    
+viewClose.addEventListener('click', function(){
+    view.classList.remove('active');
+});
+
+
 }
 
+//////////////////////////////////
+   
 
 
+
+     
+
+    
+   
+        
+    
+     
+
+
+
+
+
+
+
+
+    
 
 
 
